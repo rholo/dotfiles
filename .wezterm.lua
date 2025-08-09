@@ -1,16 +1,31 @@
--- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm  = require("wezterm")
 
--- This will hold the configuration.
-local config = wezterm.config_builder()
+config = wezterm.config_builder()
 
-config.font = wezterm.font("Hack Nerd Font Mono")
-
-config.initial_cols = 120
-config.initial_rows = 38
-config.font_size = 14
-config.color_scheme = 'Batman'
-config.window_background_opacity = .8
-config.macos_window_background_blur = 7
+config = {
+  automatically_reload_config = true,
+  macos_forward_to_ime_modifier_mask = "CTRL",
+  enable_tab_bar = true,
+  window_close_confirmation = "NeverPrompt",
+  window_decorations = "RESIZE",
+  default_cursor_style = "SteadyBlock",
+  font_size = 15,
+  font = wezterm.font('JetBrains Mono', { weight = 'Medium' }),
+  line_height = 1.12,
+  window_background_opacity = 0.82,
+  macos_window_background_blur = 15,
+  initial_rows = 44,
+  initial_cols = 160,
+  colors = {
+    cursor_bg = 'white',
+    background = '#15191e'
+  },
+  window_padding = {
+    left = 3,
+    right = 3,
+    top = 3,
+    bottom = 3
+  }
+}
 
 return config

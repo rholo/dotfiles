@@ -1,0 +1,26 @@
+[alias]
+  g = git
+  st = status
+  pl = pull
+  ps = push
+  all = add --all
+  ll = log --oneline
+  last = log -1 HEAD --stat
+  lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+  graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  changelog = !git log --pretty=\"- %s\"
+  cm = commit -m
+  cmn = commit -n -m
+  new = checkout -b
+  co = checkout
+  reset = !git reset --hard
+  stsh = !git stash push -m
+  stls = !git stash list
+  stap = !git stash apply
+
+  df-new = "!sh -c 'for file in $(git ls-files --others --exclude-standard); do echo; echo \"===== $file =====\"; git diff --no-index /dev/null \"$file\"; done'"
+  df-staged = diff --cached
+  df-all = diff HEAD
+  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+[init]
+	defaultBranch = main
