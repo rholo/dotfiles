@@ -1,12 +1,14 @@
-local st, mason = pcall(require, 'mason')
-if (not st) then return end
-local st2, lspconfig = pcall(require, 'mason-lspconfig')
-if (not st2) then return end
+local status, mason = pcall(require, "mason")
+if not status then return end
+
+local status2, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status2 then return end
 
 mason.setup({
-  PATH = 'skip'
+  PATH = "skip"  -- o "prepend" si quieres
 })
 
-lspconfig.setup {
-  automatic_installation = true
-}
+mason_lspconfig.setup({
+  automatic_installation = true,
+  ensure_installed = { "tsserver", "html", "cssls", "jsonls" }
+})
