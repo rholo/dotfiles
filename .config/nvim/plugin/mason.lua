@@ -11,7 +11,7 @@ mason.setup({
 mason_lspconfig.setup({
   automatic_installation = true,
   ensure_installed = {
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
     "lua_ls"
