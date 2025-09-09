@@ -29,6 +29,7 @@ require("lazy").setup({
   { "williamboman/mason.nvim" },
   { 'williamboman/mason-lspconfig.nvim' },
   { 'lewis6991/gitsigns.nvim' },
+  { 'mg979/vim-visual-multi', branch = 'master' },
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
