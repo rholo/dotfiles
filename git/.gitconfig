@@ -1,3 +1,4 @@
+
 [alias]
   g = git
   st = status
@@ -24,3 +25,5 @@
   br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 [init]
 	defaultBranch = main
+[include]
+  path = ~/.gitconfig.local
