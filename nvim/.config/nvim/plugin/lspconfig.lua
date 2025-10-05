@@ -1,5 +1,5 @@
-local status, lsp_config = pcall(require, 'lspconfig')
-if (not status) then return end
+-- local status, lsp_config = pcall(require, 'lspconfig')
+-- if (not status) then return end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local on_attach = function(_none, bufnr)
@@ -19,19 +19,17 @@ local on_attach = function(_none, bufnr)
   -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
-
-lsp_config.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   on_attach = on_attach,
+  capabilities = capabilities,
   filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript' },
   cmd = { "typescript-language-server", "--stdio" },
-  capabilities = capabilities
-}
-lsp_config.html.setup {
+})
+vim.lsp.config('html', {
   on_attach = on_attach,
   capabilities = capabilities
-}
-lsp_config.cssls.setup {
+})
+vim.lsp.config('csls', {
   on_attach = on_attach,
   capabilities = capabilities
-}
-
+})
