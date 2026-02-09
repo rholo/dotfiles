@@ -9,21 +9,21 @@ setopt share_history
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
-
 plugins=(git zsh-completions zsh-autosuggestions)
 
 unsetopt correct
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zshenv.local
-
+PROMPT="$PROMPT
+%{$fg[green]%}❯%{$reset_color%} "
 alias vim="nvim"
+alias home=$HOME
 
-alias home="~/"
-
-alias gitconfig="nvim ~/.gitconfig"
-alias zshconfig="nvim ~/.zshrc"
-alias nvimconfig="nvim ~/.config/nvim/init.lua"
+alias dotfiles="~/dotfiles"
+alias gitconfig="nvim ~/dotfiles/git/.gitconfig"
+alias zshconfig="nvim ~/dotfiles/zsh/.zshrc"
+alias nvimconfig="nvim ~/dotfiles/nvim/.config/nvim/init.lua"
 alias workspace="~/workspace"
 
 alias ll="eza -la --icons -l -G"
@@ -39,4 +39,5 @@ bindkey '^A' autosuggest-accept
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 
