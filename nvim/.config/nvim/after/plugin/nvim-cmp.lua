@@ -4,10 +4,15 @@ local cmp_status, cmp = pcall(require, "cmp")
 local lspkind = require 'lspkind'
 
 cmp.setup({
+  completion = {
+    autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged },
+  },
   mapping = cmp.mapping.preset.insert({
    ["<C-k>"] = cmp.mapping.select_prev_item(),
    ["<C-j>"] = cmp.mapping.select_next_item(),
-   ["<C-Space>"] = cmp.mapping.complete(),
+   ["<C-n>"] = cmp.mapping.complete(),
+   ["<CR>"] = cmp.mapping.confirm({ select = false }),
+   ["<Tab>"] = cmp.mapping.confirm({ select = true }),
   }),
   snippet = {
     expand = function(args)
