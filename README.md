@@ -101,7 +101,7 @@ GNU Stow es una herramienta para gestionar symlinks de forma automática y organ
 brew install stow
 ```
 
-### 8. Herramientas Adicionales
+### 9. Herramientas Adicionales
 
 Instala herramientas adicionales utilizadas en la configuración:
 
@@ -111,6 +111,9 @@ brew install eza
 
 # Git (versión actualizada)
 brew install git
+
+# lazygit - interfaz UI para Git en la terminal
+brew install lazygit
 ```
 
 ## ⚙️ Configuración
